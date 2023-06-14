@@ -87,7 +87,7 @@
 # print(nums)
 
 # import copy
-# test = copy.deepcopy(info)
+# test = copy.deepcopy(info) # Кортеж можно скопировать только с пом deepcopy
 # print(test)
 #
 # info_copy = info
@@ -106,7 +106,7 @@
 # print(info)
 
 ####
-# for num in 1, 3, 4, 5, 6, 7:
+# for num in 1, 3, 4, 5, 6, 7: # в данном случае 1, 3, 4, 5, 6, 7 - это кортеж
 #     print(num)
 
 # for i in range(5):  # 0, 1, 2, 3, 4
@@ -121,21 +121,21 @@
 #
 # numbers = list(range(10))
 # print(numbers)
-#
+# #
 # numbers = list(range(3, 10))
 # print(numbers)
-#
+# #
 # numbers = list(range(1, 10, 2))
 # print(numbers)
-#
+# #
 # numbers = list(range(10, 0, -1))
 # print(numbers)
-#
+# #
 # numbers = tuple(range(10, 0, -1))
 # print(numbers)
-#
+# #
 # result = sorted(numbers)
-# print(result)
+# print(result) # result теперь список
 # print(numbers)
 
 ################################################################
@@ -150,7 +150,7 @@
 #     True: 111,
 #     # 2: "qwerty",  # дублировать ключи нельзя!
 # }
-# #
+#
 # print(users)
 # print(type(users))
 # print(users[1])  # [1] -> это не индекс, а key
@@ -158,7 +158,7 @@
 # print(users[2.4])
 # print(users[True])
 # print(users[2])
-#
+
 
 #
 # users_list = [
@@ -169,7 +169,7 @@
 #
 # users_dict = dict(users_list)
 # print(users_dict)
-#
+# #
 # users_list = list(users_dict)
 # print(users_list)
 
@@ -184,36 +184,36 @@
 # users["+33333333"] = "Petya"
 # print(users["+33333333"])
 #
-# users["+4444444"] = "Test"  # если ключа нет - он будет добавлен с значением
+# users["+4444444"] = "Test"  # если ключа нет - он будет добавлен со значением
 # print(users["+4444444"])
 #
 # print(users)
-# #
+# # #
 # for key in users:
 #     print(users[key], end=" ")
-#
+# #
 # print()
 # #
 # for key in users.keys():
 #     print(key, end=" ")
-# #
+# # #
 # print()
 # print(users.keys())
 # print(list(users.keys()))
-# # #
+# # # #
 # for value in users.values():
 #     print(value, end=" ")
 #
 # print()
 # print(users.values())
-# #
+# # #
 # print()
 # for key, value in users.items():
 #     print(f"key: {key} value: {value}")
-#
+# #
 # print()
 # print(users.items())
-##
+# ##
 # print("one", "two", "three", sep=", ", end=" ")
 # print("test")
 
@@ -224,10 +224,10 @@
 #     "+55555555": "Alice"
 # }
 #
-# print(users["+33333333"])
-# print(users.get("+33333333", "key not exists"))
+# # print(users["+33333333"])
+# # print(users.get("+33333333", "key not exists"))
 #
-# del users["+55555555"]
+# # del users["+55555555"]
 # deleted_value = users.pop("+55555555", "key not exists")
 # print(deleted_value)
 # print(users)
@@ -235,7 +235,7 @@
 # users.clear()
 # print(users)
 
-##
+# ##
 # users_1 = {
 #     "+11111111": "Tom",
 #     "+33333333": "Bob",
@@ -247,18 +247,18 @@
 # print(users_1)
 # print(users_copy)
 # users_copy[111] = "qqqqqq"
-# print(users_1)
+# print(users_1) # не поменялся
 # print(users_copy)
-
+#
 # users_2 = {
 #     "+11111111": "eeeeeee",
 #     "+44444": "qqqqqq",
 #     "+12341234": "wwwwwww"
 # }
 # # #
-# users_1.update(users_2)
-# print(users_1)
-# print(users_2)
+# users_1.update(users_2) # Добавились в список 1 элементы из списка 2
+# print(users_1) # поменялся
+# print(users_2) # не поменялся
 ###
 # json
 # users = {
@@ -289,7 +289,7 @@
 #         break
 # else:
 #     print("Nothing found!")
-# ##
+##
 # if key in users:
 #     print(users[key])
 # else:
@@ -301,18 +301,18 @@
 # users = {"Tom", "Bob", "Alice", "Tom"}
 # print(users)
 # print(type(users))
-# #
+# # #
 # people = ["Mike", "Bill", "Ted"]
 # users = set(people)
 # print(users)
-# # # #
+# # # # #
 # print(len(users))
-# # #
+# # # #
 # users.add("Sam")
 # print(users)
-# #
+# # #
 # users = {"Tom", "Bob", "Alice"}
-#
+# #
 # user = "Tom"
 # if user in users:
 #     users.remove(user)  # если нет значения - генерируется исключение
@@ -320,6 +320,7 @@
 # #
 # users = {"Tom", "Bob", "Alice"}
 #
+# discard Удаляет указанный элемент из множества, если он там присутствует.
 # users.discard("Tim")  # элемент "Tim" отсутствует, и метод ничего не делает
 # print(users)
 # # #
@@ -333,68 +334,68 @@
 #
 # # copy() копирование работает так же как и в list, dict и тд
 #
-users = {"Tom", "Bob", "Alice"}
-users2 = {"Sam", "Kate", "Bob"}
-
-users3 = users.union(users2)
-print(users3)
+# users = {"Tom", "Bob", "Alice"}
+# users2 = {"Sam", "Kate", "Bob"}
 #
-users = {"Tom", "Bob", "Alice"}
-users2 = {"Tom", "Sam", "Kate", "Bob"}
-
-# v1
-users3 = users.intersection(users2)
-# v2
-print(users & users2)
-print(users3)
-#
-users = {"Tom", "Bob", "Alice"}
-users2 = {"Sam", "Kate", "Bob"}
-users.intersection_update(users2)
-print(users)
-
-users = {"Tom", "Bob", "Alice"}
-users2 = {"Sam", "Kate", "Bob"}
+# users3 = users.union(users2) # Объединяет сеты и убирает повторы
+# print(users3)
+# #
+# users = {"Tom", "Bob", "Alice"}
+# users2 = {"Tom", "Sam", "Kate", "Bob"}
 #
 # # v1
-users3 = users.difference(users2)
-print(users3)  # {"Tom", "Alice"}
-# v2
-print(users - users2)
+# users3 = users.intersection(users2) # пересечение, функция возвращает то, что есть и в 1м, и во 2м списке
+# # # v2
+# print(users & users2) # аналог интерсекции
+# print(users3)
+# # #
+# users = {"Tom", "Bob", "Alice"}
+# users2 = {"Sam", "Kate", "Bob"}
+# users.intersection_update(users2)
+# print(users)
 #
-users.difference_update(users2)
-print(users)
-print(users2)
+# users = {"Tom", "Bob", "Alice"}
+# users2 = {"Sam", "Kate", "Bob"}
+#
+# # v1
+# users3 = users.difference(users2) # находит уникальные значения в 1м списке по сравнению со 2м
+# print(users3)  # {"Tom", "Alice"}
+# # v2
+# print(users - users2)
+# # #
+# users.difference_update(users2)
+# print(users)
+# print(users2)
+# # #
+# users = {"Tom", "Bob", "Alice"}
+# users2 = {"Sam", "Kate", "Bob"}
+#
+# # v1
+# users3 = users.symmetric_difference(users2) # Уникальные значения из обоих множеств
+# print(users3)
 # #
-users = {"Tom", "Bob", "Alice"}
-users2 = {"Sam", "Kate", "Bob"}
-
-# v1
-users3 = users.symmetric_difference(users2)
-print(users3)
-
-# v2
-users4 = users ^ users2
-
-# ##
-users = {"Tom", "Bob", "Alice"}
-superusers = {"Sam", "Tom", "Bob", "Alice", "Greg"}
-
-print(users.issubset(superusers))  # True
-print(superusers.issubset(users))  # False
-
+# # # v2
+# users4 = users ^ users2
 #
-users = {"Tom", "Bob", "Alice"}
-superusers = {"Sam", "Tom", "Bob", "Alice", "Greg"}
-
-print(users.issuperset(superusers))  # False
-print(superusers.issuperset(users))  # True
-
+# # ##
+# users = {"Tom", "Bob", "Alice"}
+# superusers = {"Sam", "Tom", "Bob", "Alice", "Greg"}
 #
-# # Тип frozen set является видом множеств, которое не может быть изменено (по типу tuple у list)
-users = frozenset({"Tom", "Bob", "Alice"})
-print(users)
-users = set(users)
-print(users)
-# # можно использовать все функции обычного set, кроме тех которые модифицируют значения
+# print(users.issubset(superusers))  # True подмножество
+# print(superusers.issubset(users))  # False надмножество
+# #
+# #
+# users = {"Tom", "Bob", "Alice"}
+# superusers = {"Sam", "Tom", "Bob", "Alice", "Greg"}
+# #
+# print(users.issuperset(superusers))  # False
+# print(superusers.issuperset(users))  # True
+#
+# #
+# # # Тип frozen set является видом множеств, которое не может быть изменено (по типу tuple у list)
+# users = frozenset({"Tom", "Bob", "Alice"})
+# print(users)
+# users = set(users)
+# print(users)
+# # # можно использовать все функции обычного set, кроме тех которые модифицируют значения
 
