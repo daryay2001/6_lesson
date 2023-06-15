@@ -39,18 +39,42 @@
 # list_1 = [1, 12, 36, 27, 81, 2, 36, 27]
 # list_2 = [36, 85, 45, 1, 27, 2, 12, 8, 0, 9, 225]
 #
-# lst_1 = set(list_1)
-# lst_2 = set(list_2)
+# try:
+#     lst_1 = set(list_1)
+#     lst_2 = set(list_2)
 #
-# lst_3 = lst_1.intersection(lst_2)
-# print(lst_3)
+#     lst_3 = lst_1.intersection(lst_2) # функция возвращает то, что есть и в 1м, и во 2м списке
+#     print(lst_3)
 #
-# total_num = 0
+#     total_num = 0
 #
-# for i in lst_3:
-#     total_num += 1
-# print(f"Total amount of numbers which are in both strings: {total_num}")
-
+#     for i in lst_3:
+#         total_num += 1
+#     print(f"Total amount of numbers which are in both lists: {total_num}")
+#
+# except ValueError as error:
+#     print(error)
+# except Exception as error:
+#     print(error)
 # 3.
 
-text = "в первой строке записано число строк, далее идут сами строки."
+# text = "в первой строке записано число строк, далее идут сами строки."
+# print(text)
+# try:
+#     SEPARATOR = " " # в данном случае сепаратором явл пробел, т.к. предложение одно и слова раздел пробелом.
+#     sep_words = text.split(SEPARATOR)
+#     print(sep_words)
+#
+#     sep_2 = sorted(sep_words) # сортируем слова для последовательного сравнения
+#     print(sep_2)
+#
+#     count = 0
+#     for i in range(0, len(sep_2)):
+#         if sep_2[i] != sep_2[i - 1]:
+#             count += 1
+#     print(f"There are {count} different words in this sentence.")
+# except ValueError as error:
+#     print(error)
+# except Exception as error:
+#     print(error)
+
